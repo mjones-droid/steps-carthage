@@ -24,7 +24,6 @@ func NewCLIBuilder() CLIBuilder {
 func (builder CLIBuilder) AddGitHubToken(githubToken stepconf.Secret) cachedcarthage.CommandBuilder {
 	if githubToken != "" {
 		builder.cmd.AppendEnvs(fmt.Sprintf("GITHUB_ACCESS_TOKEN=%s", string(githubToken)))
-		fmt.Println("Github Access Token Added")
 	}
 	return builder
 }

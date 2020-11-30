@@ -116,6 +116,8 @@ func (runner Runner) executeCommand() error {
 		Append(runner.args...)
 	cmd := builder.Command()
 
+	fmt.Printf("%v", cmd)
+
 	cmd.SetStdout(os.Stdout)
 	cmd.SetStderr(os.Stderr)
 
