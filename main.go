@@ -94,9 +94,6 @@ func main() {
 		carthage.NewCLIBuilder(),
 	)
 
-	// Make sure the personal access token is present
-	log.Printf("Github Personal Access Token: %s", configs.GithubAccessToken)
-
 	if err := runner.Run(); err != nil {
 		fail("Failed to execute step: %s", err)
 	}
