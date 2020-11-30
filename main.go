@@ -93,6 +93,10 @@ func main() {
 		cachedcarthage.NewCache(project, swiftVersion, &filecache, stateProvider),
 		carthage.NewCLIBuilder(),
 	)
+
+	// Make sure the personal access token is present
+	log.Printf("Github Personal Access Token: %s", runner.githubAccessToken)
+
 	if err := runner.Run(); err != nil {
 		fail("Failed to execute step: %s", err)
 	}
